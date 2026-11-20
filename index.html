@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Alumnos | HTML + FastAPI + PostgreSQL</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="encabezado">
+    <div class="contenedor">
+      <h1>Registro de Alumnos — HTML + FastAPI + PostgreSQL</h1>
+      <p>Práctica GET y POST · API conectada en <code>http://127.0.0.1:8000/alumnos</code></p>
+    </div>
+  </header>
+
+  <main class="contenedor grid">
+    <section class="tarjeta">
+      <h2>Registrar nuevo alumno</h2>
+      <form id="formAlumno">
+        <label for="nombre">Nombre del alumno</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana López" maxlength="80" required />
+
+        <label for="carrera">Carrera</label>
+        <input type="text" id="carrera" name="carrera" placeholder="Ej. TICs" maxlength="80" required />
+
+        <button type="submit" class="btn-primario">Guardar alumno</button>
+      </form>
+      <p id="mensajeEstado" class="mensaje"></p>
+    </section>
+
+    <section class="tarjeta">
+      <div class="cabecera-tabla">
+        <h2>Alumnos guardados en PostgreSQL</h2>
+        <button type="button" id="btnActualizar" class="btn-secundario">Actualizar lista</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Carrera</th>
+          </tr>
+        </thead>
+        <tbody id="tablaAlumnos">
+          <tr>
+            <td colspan="3" class="vacio">Cargando alumnos...</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
